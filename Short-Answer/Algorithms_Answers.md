@@ -16,3 +16,22 @@ So, as the floors are in order, a 'binary search' solution would be theoreticall
     If the egg drops, and breaks, go to the middle floor between the current floor and the ground, and repeat the drop. Until you have found the break point of where the egg breaks/doesn't break (within one floor precision)
     If the egg drops from f and does not break, go to the middle floor between the current floor and the top floor and repeat the drop (within one floor precision).
 The runtime complexity of this search will be O(log(n)), as we will not need to drop eggs off each floor, but as the building's height increases, it will take more eggs to drop to find the exact point where the egg does/does not break.  
+
+n number of floors in the building:
+
+rough pseudocode explanation:
+
+def egg_drop(n):
+    f = middle_floor = n//2
+    if middleFloorBreaksEgg == True:
+        egg_drop( middle_floor // 2 )
+        if eggOk:
+            egg_drop(f+.5f)
+        if eggBreaksAgain:
+            egg_drop( f -.5f )
+    if middleFloorBreaksEgg == False:
+        egg_drop( f+.5f)
+        if eggBreaks:
+            egg_drop(f-.5f)
+        if eggOk:
+            egg_drop(f+.5f)
