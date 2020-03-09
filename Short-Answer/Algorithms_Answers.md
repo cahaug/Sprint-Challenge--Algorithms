@@ -2,8 +2,8 @@
 
 ## Exercise I
 
-a) As we have a while loop we will begin by looking inside the loop for the complexity of the interior operation, which is a constant operation with O(1) complexity.  However, when considering the math that is going on, we are evaluating essentially the case of adding the square of an inputted number to zero until that increasing number is greater than the cube of the inputted number.  By my estimations, this should take approximately two runs of the while loop to complete the case, with any value of n > 1.  The runtime complexity of the code snippet is O(1), as the runtime does not substantively change with an increase in n.
-
+<!-- a) As we have a while loop we will begin by looking inside the loop for the complexity of the interior operation, which is a constant operation with O(1) complexity.  However, when considering the math that is going on, we are evaluating essentially the case of adding the square of an inputted number to zero until that increasing number is greater than the cube of the inputted number.  By my estimations, this should take approximately two runs of the while loop to complete the case, with any value of n > 1.  The runtime complexity of the code snippet is O(1), as the runtime does not substantively change with an increase in n. -->
+a) The loop is O(n) because when you divide the powers the result is O(n**3/n**2) which is just O(n)
 
 b) As we have a nested while loop inside the for loop, we burrow down to our deepest loop and begin to analyze the complexity.  We are increasing our counter by 1 which is a constant runtime, then multiplying j by two then saving that value to j, another constant operation, while j is less than n.  Since J is starting from 1, as n increases, it would take a longer time to reach the number.  But as J is doubling in value each time, it will take less steps to reach higher numbers and higher numbers (exponential/logarithmic relationship).  As it will take little time to reach the large numbers, we can expect log(n) complexity from the nested while loop.  For i in range(n) means we will be running the nested loop n times, so overall for this function the complexity would be the products of the complexities of the nested while and for loop, meaning the overall complexity of the function is O(n*log(n)).
 
@@ -19,7 +19,7 @@ The runtime complexity of this search will be O(log(n)), as we will not need to 
 
 n number of floors in the building:
 
-rough pseudocode explanation:
+rough and imperfect pseudocode explanation:
 
 def egg_drop(n):
     f = middle_floor = n//2
@@ -35,3 +35,4 @@ def egg_drop(n):
             egg_drop(f-.5f)
         if eggOk:
             egg_drop(f+.5f)
+    return f
