@@ -13,6 +13,6 @@ def count_th(word):
     else:
         return count_th(word[1:])
 
-print('count this ' + str(count_th('this')))
-print('empty '+ str(count_th('')))
-print('wordth '+ str(count_th('wordth')))
+# print('count this ' + str(count_th('this')))
+# print('empty '+ str(count_th('')))
+# print('wordth '+ str(count_th('wordth')))
