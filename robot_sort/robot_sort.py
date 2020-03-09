@@ -112,7 +112,6 @@ class SortingRobot:
                 #if larger in hand, swap item
                 if self.compare_item() == 1:
                     self.swap_item()
-            # end the loop
             while self.compare_item() is not None:
                 self.move_left()
             
