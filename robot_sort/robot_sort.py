@@ -97,7 +97,32 @@ class SortingRobot:
         Sort the robot's list.
         """
         # Fill this out
-        pass
+        # Let's adapt this robot to use a kind of Bubble Sort!!
+        # while robotLightOn (sorting in process)
+            # pass through the list , picking up the first card in the list and comparing item to next, pick up smaller then move right, 
+            # move it left, then pass through again
+        self.set_light_on()
+        while self.light_is_on():
+            self.swap_item()
+            # turn off the light when we have sorted the list
+            if not self.can_move_right():
+                self.set_light_off()
+            #while we can move right, move right
+            while self.can_move_right():
+                self.move_right()
+                #if larger in hand, swap item
+                if self.compare_item() == 1:
+                    self.swap_item()
+            while self.compare_item() is not None:
+                self.move_left()
+            
+            self.swap_item()
+            self.move_right()
+        return None
+        # as in bubble sort, the robot compares adjacent items and swaps them if they are out of order.  when we 
+        # get through the entire list, the largest item is at the last position and we can turn off the robot's light 
+
+
 
 
 if __name__ == "__main__":
